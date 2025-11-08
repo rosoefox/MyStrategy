@@ -1,73 +1,13 @@
 # MyStrategy
 
-This template should help get you started developing with Vue 3 in Vite.
+행위패턴 중 Strategy(전략) 패턴을 구현하였습니다.  
+전략에 대해 알아보고, Gemini를 통해 기본 코드를 작성한 후 변경하였습니다.
 
-## Recommended IDE Setup
+전략 패턴은 동일한 작업을 수행하는 다양한 전략들을 각각의 클래스로 캡슐화하고, 필요에 따라 이 알고리즘들을 실행 시점(런타임)에 교체하여 사용할 수 있게 하는 패턴이다.
+알고리즘을 사용하는 쪽과 알고리즘을 구현하는 쪽을 분리하여 시스템의 유연성을 극대화한다.
+많은 if/else if문 대신 새로운 전략이 추가되어도 기존 코드를 수정할 필요 없이 새로운 전략 클래스만 추가한다.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+< 실행 화면 >  
 
-## Recommended Browser Setup
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/a5ba5e58-8038-4ee6-8306-f80232dba113" />
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
