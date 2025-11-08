@@ -5,9 +5,9 @@
 
 전략 패턴은 동일한 작업을 수행하는 다양한 전략들을 각각의 클래스로 캡슐화하고, 필요에 따라 이 알고리즘들을 실행 시점(런타임)에 교체하여 사용할 수 있게 하는 패턴이다.
 알고리즘을 사용하는 쪽과 알고리즘을 구현하는 쪽을 분리하여 시스템의 유연성을 극대화한다.
-많은 if/else if문 대신 새로운 전략이 추가되어도 기존 코드를 수정할 필요 없이 새로운 전략 클래스만 추가한다.
+많은 if/else if문 대신 새로운 전략이 추가되어도 기존 코드를 수정할 필요 없이 새로운 전략 클래스만 추가하면 된다.
 
 < 실행 화면 >  
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/a5ba5e58-8038-4ee6-8306-f80232dba113" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/387d203e-67fc-4de6-b336-fb05a0395c1f" />
 
