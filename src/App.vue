@@ -43,7 +43,7 @@ const executeCalculation = (type: 'fixed' | 'percentage') => {
     </p>
 
     <div class="strategy-controls">
-      <p><strong>원가: {{ originalPrice.toLocaleString() }}원</strong></p>
+      <p><strong>원가 : {{ originalPrice.toLocaleString() }}원</strong></p>
 
       <div class="buttons">
         <button @click="executeCalculation('percentage')">20% 할인 적용</button>
@@ -51,8 +51,8 @@ const executeCalculation = (type: 'fixed' | 'percentage') => {
       </div>
 
       <div class="result-box">
-        <p>무슨 할인? : <strong>{{ strategyName }}</strong></p>
-        <p>최종 결제 가격: <strong class="final-price">{{ finalPrice.toLocaleString() }}원</strong></p>
+        <p>무슨 할인? :  <strong>{{ strategyName }}</strong></p>
+        <p>최종 결제 가격 : <strong class="final-price">{{ finalPrice.toLocaleString() }}원</strong></p>
       </div>
     </div>
     <p class="note">💚 개발자도구 콘솔을 확인하세요! 💚</p>

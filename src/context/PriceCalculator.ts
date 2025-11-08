@@ -16,7 +16,7 @@ export class PriceCalculator {
 
   //최종 가격 계산
   public calculate(originalPrice: number): number {
-    console.log(`[문맥] 원가 ${originalPrice}원에 대해 현재 전략을 실행합니다.`);
+    console.log(`${originalPrice}원에서 할인 들어갑니다!!`);
     //객체에 위임
     return this.strategy.calculateFinalPrice(originalPrice);
   }
