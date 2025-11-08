@@ -1,19 +1,19 @@
 // src/strategies/FixedDiscount.ts
 import type { IDiscountStrategy } from './DiscountStrategy';
 
-/**
- * 구체적인 전략 1: 정액 할인 (고정된 금액만큼 할인)
- */
+// 정액할인!
+
 export class FixedDiscount implements IDiscountStrategy {
-  private discountAmount: number;
+  private discountAmount: number; // 할인 금액 저장
 
   constructor(amount: number) {
-    this.discountAmount = amount;
+    this.discountAmount = amount; // 생성 시 할인 금액 저장
   }
 
-  // 인터페이스를 구현하여 정액 할인 로직을 제공합니다.
+  // 인터페이스 구현, 정액 할인 로직.
   public calculateFinalPrice(price: number): number {
-    console.log(`[전략] 정액 할인 ${this.discountAmount}원 적용됨.`);
+    console.log(`정액 할인 ${this.discountAmount}원 적용!.`);
+    //가격에서 고정된 할인 금액 빼기.
     return Math.max(0, price - this.discountAmount);
   }
 }

@@ -4,15 +4,15 @@ import { PriceCalculator } from './context/PriceCalculator';
 import { FixedDiscount } from './strategies/FixedDiscount';
 import { PercentageDiscount } from './strategies/PercentageDiscount';
 
-const originalPrice = 100000; // 원가: 100,000원
+const originalPrice = 100000; // 원가는 10만원
 const finalPrice = ref<number>(0);
-const strategyName = ref('전략 미선택');
+const strategyName = ref('원가는 10만원입니다!');
 
-// 1. 초기 전략 설정: 10% 정률 할인으로 Context(계산기) 인스턴스 생성
+// 초기전략 : 10%할인
 const initialStrategy = new PercentageDiscount(0.10);
 const calculator = new PriceCalculator(initialStrategy);
 
-// 가격 계산 실행 함수
+// 가격 계산 함수
 const executeCalculation = (type: 'fixed' | 'percentage') => {
   let newStrategy;
 
@@ -26,37 +26,36 @@ const executeCalculation = (type: 'fixed' | 'percentage') => {
     strategyName.value = '정률 할인 (20%)';
   }
 
-  // 문맥(Calculator)의 전략을 새로 만든 객체로 교체합니다.
+ // 전략 새 객체로 변경
   calculator.setStrategy(newStrategy);
-
-  // 계산을 요청합니다. 문맥은 로직을 전략 객체에 위임합니다.
+  //계산 요청
   finalPrice.value = calculator.calculate(originalPrice);
 
-  console.log(`최종 가격: ${finalPrice.value.toLocaleString()}원`);
+  console.log(`할인된 가격은??  ${finalPrice.value.toLocaleString()}원`);
 };
 </script>
 
 <template>
   <div class="container">
-    <h1>🏃 행위 패턴: Strategy (전략) 패턴 구현</h1>
+    <h1>💚 !!오늘은 할인할인!! 💚</h1>
     <p class="description">
-      알고리즘(할인 방식)을 클래스로 분리하고 **런타임에 교체**하여 최종 가격을 계산합니다.
+      !초프초프 상품 할인 중입니다!
     </p>
 
     <div class="strategy-controls">
       <p><strong>원가: {{ originalPrice.toLocaleString() }}원</strong></p>
 
       <div class="buttons">
-        <button @click="executeCalculation('percentage')">20% 정률 할인 적용</button>
-        <button @click="executeCalculation('fixed')">30,000원 정액 할인 적용</button>
+        <button @click="executeCalculation('percentage')">20% 할인 적용</button>
+        <button @click="executeCalculation('fixed')">30,000원 할인 적용</button>
       </div>
 
       <div class="result-box">
-        <p>선택된 전략: <strong>{{ strategyName }}</strong></p>
+        <p>무슨 할인? : <strong>{{ strategyName }}</strong></p>
         <p>최종 결제 가격: <strong class="final-price">{{ finalPrice.toLocaleString() }}원</strong></p>
       </div>
     </div>
-    <p class="note">⚠️ **전략 실행 및 교체 과정은 개발자 도구 (Console)에서 확인하세요.**</p>
+    <p class="note">💚 개발자도구 콘솔을 확인하세요! 💚</p>
   </div>
 </template>
 
@@ -69,8 +68,8 @@ const executeCalculation = (type: 'fixed' | 'percentage') => {
 }
 
 h1 {
-  color: #4CAF50; /* 전략 패턴은 초록색으로 */
-  border-bottom: 3px solid #6A5ACD;
+  color: #4CAF50;
+  border-bottom: 3px solid #F0E68C;
   padding-bottom: 15px;
   margin-bottom: 20px;
 }
